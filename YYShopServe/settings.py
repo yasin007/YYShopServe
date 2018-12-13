@@ -20,7 +20,7 @@ sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 sys.path.insert(0, os.path.join(BASE_DIR, "extra_apps"))
 
-# ---秘钥
+# ---密钥
 
 SECRET_KEY = 'r$^81^ng+2m1_-n%=l1)=kl=2)c+_q59lbrvqj)6#b&(rx!4!1'
 
@@ -40,22 +40,27 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'users.apps.UsersConfig',
+    'trade.apps.TradeConfig',
+    'goods.apps.GoodsConfig',
+    'user_operation.apps.UserOperationConfig',
     'xadmin',
     'crispy_forms',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'YYShopServe.urls'
 
 TEMPLATES = [
