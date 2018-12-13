@@ -18,6 +18,7 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 User = get_user_model()
 
+
 class SmsCodeViewset(CreateModelMixin, viewsets.GenericViewSet):
     """
     发送短信验证码
